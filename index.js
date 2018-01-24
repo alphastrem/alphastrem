@@ -9,7 +9,7 @@ var manifest = {
 
     "name": "AlphaStrem Addon",
     "description": "Sample addon providing a few public domain movies",
-    "icon": "http://cdnak1.psbin.com/logos/id/d370u26yxp4l0n55.png", 
+    "icon": "https://i.pinimg.com/736x/ee/ab/a8/eeaba8dd330e61771413c424ba6110fc--op-art-optical-illusions.jpg", 
     "background": "https://ipbzz73v1i-flywheel.netdna-ssl.com/wp-content/uploads//2015/05/cq5dam.web_.1280.1280-3-5557b78cacbb3.jpeg",
 
     // Properties that determine when Stremio picks this add-on
