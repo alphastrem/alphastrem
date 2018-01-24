@@ -43,3 +43,15 @@ var server = require("http").createServer(function (req, res) {
 {
     console.log("Sample Stremio Addon listening on "+server.address().port);
 }).listen(process.env.PORT || 7000);
+
+
+
+
+
+
+/* Methods
+ */
+methods["stream.find"] = function(args, callback) {
+    if (! args.query) return callback();
+    callback(null, [dataset[args.query.imdb_id]]);
+}
