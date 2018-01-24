@@ -7,10 +7,10 @@ var manifest = {
     "id": "org.stremio.helloworld",
     "version": "1.0.0",
 
-    "name": "Example Addon",
-    "description": "Sample addon providing a few public domain movies",
-    "icon": "URL to 256x256 monochrome png icon", 
-    "background": "URL to 1366x756 png background",
+    "name": "Lee's bitchin addon",
+    "description": "this is my description",
+    "icon": "http://cdnak1.psbin.com/logos/id/d370u26yxp4l0n55.png", 
+    "background": "https://ipbzz73v1i-flywheel.netdna-ssl.com/wp-content/uploads//2015/05/cq5dam.web_.1280.1280-3-5557b78cacbb3.jpeg",
 
     // Properties that determine when Stremio picks this add-on
     "types": ["movie", "series"], // your add-on will be preferred for those content types
@@ -26,3 +26,20 @@ var dataset = {
     "tt0031051": { yt_id: "m3BKVSpP80s", availability: 3 }, // The Arizona Kid, 1939; YouTube stream
     "tt0137523": { externalUrl: "https://www.netflix.com/watch/26004747" }, // Fight Club, 1999; redirect to Netflix
 };
+
+
+
+
+
+var methods = { };
+var addon = new Stremio.Server(methods, manifest);
+
+
+
+
+var server = require("http").createServer(function (req, res) {
+    addon.middleware(req, res, function() { res.end() }); // wire the middleware - also compatible with connect / express
+}).on("listening", function()
+{
+    console.log("Sample Stremio Addon listening on "+server.address().port);
+}).listen(process.env.PORT || 7000);
